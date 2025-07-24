@@ -1,0 +1,19 @@
+<!-- Animación de número estilo Spline Group -->
+<div class="animated-number-container">
+  <span class="animated-number">10</span>
+</div>
+
+<script>
+// Animación simple con Intersection Observer y CSS
+const number = document.querySelector('.animated-number');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      number.classList.add('animate');
+    } else {
+      number.classList.remove('animate');
+    }
+  });
+});
+observer.observe(number);
+</script>
